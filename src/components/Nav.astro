@@ -1,14 +1,13 @@
 ---
 export const links = [
-  { text: "Inicio", href: "/#inicio" },
-  { text: "Menú", href: "/#menu"},
-  { text: "Nosotros", href: "/#about" },
-  { text: "Ubícanos", href: "/#location" },
-  { text: "Contacto", href: "/#footer" },
+  { text: "Inicio", href: "/#home" },
+  { text: "Sobre mi", href: "/#about"},
+  { text: "Intereses", href: "/#interests" },
+  { text: "Redes", href: "/#social" },
 ];
 ---
 
-<nav class="fixed top-0 w-full bg-outline border-b border-b-primary z-50">
+<nav class="fixed bg-opacity-0 backdrop-blur-md top-0 w-full bg-outline border-b border-b-primary z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
         <!-- Logo -->
@@ -41,12 +40,6 @@ export const links = [
               {link.text}
             </a>
           ))}
-        </div>
-        
-        <div class="hidden md:block">
-          <a href="/porhacer" class="border border-bg-white flex items-center gap-2 text-bg-white py-3 px-6 hover:underline">
-            Contacto
-          </a>
         </div>
       </div>
     </div>

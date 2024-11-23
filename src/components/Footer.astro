@@ -1,42 +1,42 @@
 ---
-export const links = [
-    { text: "Inicio", href: "/#inicio" },
-    { text: "Menú", href: "/#menu"},
-    { text: "Nosotros", href: "/#about" },
-    { text: "Ubícanos", href: "/#location" },
-    { text: "Contacto", href: "/#footer" },
-];
+import { links } from "./Nav.astro";
+import { Icon } from "astro-icon/components";
 ---
 
-<footer class="text-white flex flex-col sm:flex-row justify-between container mx-auto px-6">
-    <div class="">
-        <h4 class="">Dot Dager</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <p>Copyright &copy; Dot Dager 2024</p>
+<footer class="text-white gap-10 flex flex-col sm:flex-row justify-between container mx-auto px-6 py-10">
+    <div class=" px-10">
+        <h4 class="text-2xl mb-6">Dot Dager</h4>
+        <p class="text-gray font-light mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="text-gray/60 text-sm">Copyright &copy; Dot Dager 2024</p>
     </div>
-    <span class="w-2 h-[160px] bg-primary-light"></span>
-    <div>
-        <h4 class="">Sitemap</h4>
-        <div class="flex sm:flex-col gap-4">
+    <div class="px-10">
+        <h4 class="text-2xl mb-6">Sitemap</h4>
+        <div class="flex sm:flex-col gap-2">
             {links.map(link => (
                 <a href={link.href} class="text-gray">{link.text}</a>
             ))}
         </div>     
     </div>
-    <div>
-        <h4 class="">Seguime en mis redes</h4>
+    <div class="px-10">
+        <h4 class="text-2xl mb-6">Social</h4>
         <div class="flex sm:flex-col gap-4">
-            <a href="">
-                //logo
+            <a href="https://www.youtube.com/@DotDager" target="_blank" class="text-gray" aria-label="Youtube de Dot Dager">
+                <Icon name="mdi:youtube" size={24} />
             </a>
-            <a href="">
-
+            <a href="https://www.twitch.tv/dagerxiv" target="_blank" class="text-gray" aria-label="Twitch de Dot Dager">
+                <Icon name="mdi:twitch" size={24} />
             </a>
-            <a href="">
-
+            <a href="https://www.instagram.com/dager.32/" target="_blank" class="text-gray" aria-label="Instagram de Dot Dager">
+                <Icon name="mdi:instagram" size={24} />
             </a>
-            <a href="">
-                
+            <a href="https://www.tiktok.com/@elantrodedager" target="_blank" class="text-gray" aria-label="TikTok de Dot Dager">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48"></path></svg>
+            </a>    
+            <a href="https://github.com/MarianoVilla" target="_blank" class="text-gray" aria-label="Github de Dot Dager">
+                <Icon name="mdi:github" size={24} />
+            </a>    
+            <a href="https://open.spotify.com/intl-es/artist/6bkClBMJd4qKxJp0J5vHsz?si=pDh9YzHqSJuo45Al_x5_zw" target="_blank" class="text-gray" aria-label="Spotify de Dot Dager">
+                <Icon name="mdi:spotify"  size={24}/>
             </a>    
         </div>        
     </div>

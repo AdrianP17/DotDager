@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import { animate } from 'motion'
+import defaultTheme from 'tailwindcss/defaultTheme'
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
@@ -14,8 +16,15 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
+				sans: ['GeneralSans', 'sans-serif'],
+				mono: ['Nippo-Medium', 'monospace'],
 			},
+			animation: {
+				'up-down': 'updown 2s ease-in-out infinite',
+			},	
+			boxShadow: {
+				'inner-lg': 'inset 0 4px 100px rgba(0, 0, 0, 0.6)', // Personalizado
+			  },
 		},
 	},
 	plugins: [],

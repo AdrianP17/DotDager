@@ -1,20 +1,23 @@
 ---
 const links = [
-    { text: "GitHub", href: "https://github.com/dotdager" },
-    { text: "Instagram", href: "https://www.instagram.com/dotdager/" },
-    { text: "Twitter", href: "https://twitter.com/dotdager" },
-    { text: "LinkedIn", href: "https://www.linkedin.com/in/dotdager/" },
-    { text: "Spotify", href: "https://open.spotify.com/user/31j4q4q4q4q4q4q4q4q4q4q4q4?si=4b5b4d3a3f6d4c3e4a3d4b3e4a3d4b3e4a3d4b3e4a3d4b3e" }, 
+    { text: "Linktree", href: "https://linktr.ee/DotDager" },
+    { text: "YouTube", href: "https://www.youtube.com/@DotDager" },
+    { text: "Spotify", href: "https://open.spotify.com/intl-es/artist/6bkClBMJd4qKxJp0J5vHsz?si=pDh9YzHqSJuo45Al_x5_zw" }, 
+    { text: "Twitter", href: "https://x.com/Dager_32" },
+    { text: "GitHub", href: "https://github.com/MarianoVilla" },
 ]
+import AstroLink from "./AstroLink.astro"
 ---
 
-<section id="social" class="pt-24 md:pt-32 min-h-screen 2xl:pt-36">
-    <div class="container mx-auto px-2 border border-primary rounded-3xl">
-        <h1 class="text-6xl text-center font-bold mb-5 md:mb-14 lg:mb-16 text-text-100 sm:text-8xl 2xl:tracking-wide 2xl:text-[140px]">
+<section id="social" class="py-24 md:py-32 2xl:py-36">
+    <div class="container mx-auto border border-primary rounded-3xl py-32  shadow-primary shadow-inner-lg">
+        <h1 class="text-5xl leading-normal text-center font-bold mb-10 md:mb-14 lg:mb-16 text-text-100 md:text-8xl text-primary-light-200">
             Seguime en mis redes
         </h1>
-        <div class="flex flex-wrap justify-center ">
-            //List
+        <div class="flex gap-4 flex-wrap justify-center ">
+            {links.map(link => (
+                <AstroLink href={link.href} text={link.text}></AstroLink>
+            ))}
         </div>
     </div>
 </section>

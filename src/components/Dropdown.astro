@@ -1,19 +1,70 @@
 ---
 interface Props {
-    title: string
+  title: string;
 }
 
-const { title } = Astro.props   
+const { title } = Astro.props;
 ---
 
-<div class="">
-    <div class="py-4 flex justify-between items-center">
-        <h3 class="text-4xl md:text-5xl uppercase font-bold">{title}</h3>
-        //Icon
-
-    </div>
-    //Content
-    <div class="px-6 py-4">
-        <slot />
-    </div>
+<div class="dropdown border-b border-b-primary-light-200">
+  <!-- Título del dropdown -->
+  <div class="dropdown-header" id="dropdown-header">
+    <h3 class="text-3xl font-bold uppercase">{title}</h3>
+    <div class="icon text-primary">+</div>
+  </div>
+  <!-- Contenido del dropdown -->
+  <div class="dropdown-content">
+    <slot />
+  </div>
 </div>
+
+<style>
+
+  .dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 32px 16px;
+    user-select: none;
+  }
+
+
+  .dropdown-header .icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+
+  .dropdown-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease, padding 0.3s ease;
+    padding: 0 16px;
+  }
+
+  .dropdown-content.open {
+    max-height: 100vh; /* Para que crezca dinámicamente */
+    padding: 8px 16px;
+  }
+</style>
+
+<script>
+ // Selección del contenedor principal y asignación de eventos
+ document.addEventListener('DOMContentLoaded', () => {
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach((dropdown) => {
+      const header = dropdown.querySelector('.dropdown-header');
+      const content = dropdown.querySelector('.dropdown-content');
+      const icon = dropdown.querySelector('.icon');
+
+      header?.addEventListener('click', () => {
+        if (!content) return;
+        if (!icon) return;
+        content?.classList.toggle('open');
+        icon.textContent = content?.classList.contains('open') ? '-' : '+';
+      });
+    });
+  });
+</script>

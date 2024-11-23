@@ -1,0 +1,55 @@
+@import url('nippo.css');
+@import url('nippo.css');
+
+#home {
+  position: relative;
+  background-image: url('/image-11.jpg'); /* Imagen de fondo */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh; /* Sección ocupa toda la pantalla */
+}
+
+#home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para reducir opacidad */
+  opacity: 0.5;
+  z-index: 1; /* Coloca el pseudo-elemento detrás del contenido */
+  pointer-events: none; /* Permite interacción con el contenido */
+}
+
+#home::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); /* Gradiente hacia la parte inferior */
+  opacity: 0.8;
+  z-index: 2; /* Gradiente se coloca sobre la imagen pero detrás del contenido */
+  pointer-events: none;
+}
+
+/* Asegura que el contenido del héroe esté por encima */
+#home > * {
+  position: relative;
+  z-index: 3;
+}
+
+@keyframes updown {
+  0% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}
