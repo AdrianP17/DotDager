@@ -1,0 +1,23 @@
+---
+import Image from "astro/components/Image.astro"
+import Dager from "../media/dager.jpg"
+---
+
+<section id="about" class="pt-24 md:pt-32 min-h-screen 2xl:pt-36">
+    <div class="container grid sm:grid-cols-2 mx-auto px-2">
+        <div class="w-full">
+            <h1 class="text-6xl text-center font-bold mb-5 md:mb-14 lg:mb-16 text-text-100 sm:text-8xl 2xl:tracking-wide 2xl:text-[140px]">
+                About
+            </h1>
+            <p class="text-lg md:text-xl max-w-[240px] md:max-w-[320px] lg:max-w-[400px] text-text-200 mb-4">
+                Hola, soy Mariano. Me encanta crear contenido, explorar ideas filosóficas y disfrutar de la compañía de mis gatos. La programación, la música, y las pequeñas cosas como los pickles hacen que la vida sea más interesante.
+            </p>
+            <a href="#" class="px-6 py-3 bg-primary text-bg-white rounded hover:shadow-lg shadow-primary/50 ">
+                Seguime :)
+            </a>
+        </div>
+        <div class="">
+            <Image src={Dager} alt="profile" width={500} height={500} class="w-full" />
+        </div>
+    </div>
+</section>

@@ -1,0 +1,43 @@
+---
+export const links = [
+    { text: "Inicio", href: "/#inicio" },
+    { text: "Menú", href: "/#menu"},
+    { text: "Nosotros", href: "/#about" },
+    { text: "Ubícanos", href: "/#location" },
+    { text: "Contacto", href: "/#footer" },
+];
+---
+
+<footer class="text-white flex flex-col sm:flex-row justify-between container mx-auto px-6">
+    <div class="">
+        <h4 class="">Dot Dager</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Copyright &copy; Dot Dager 2024</p>
+    </div>
+    <span class="w-2 h-[160px] bg-primary-light"></span>
+    <div>
+        <h4 class="">Sitemap</h4>
+        <div class="flex sm:flex-col gap-4">
+            {links.map(link => (
+                <a href={link.href} class="text-gray">{link.text}</a>
+            ))}
+        </div>     
+    </div>
+    <div>
+        <h4 class="">Seguime en mis redes</h4>
+        <div class="flex sm:flex-col gap-4">
+            <a href="">
+                //logo
+            </a>
+            <a href="">
+
+            </a>
+            <a href="">
+
+            </a>
+            <a href="">
+                
+            </a>    
+        </div>        
+    </div>
+</footer>
