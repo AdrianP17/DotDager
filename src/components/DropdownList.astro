@@ -1,6 +1,13 @@
 ---
 
 import Dropdown from "./Dropdown.astro"
+import Image from "astro/components/Image.astro"
+import Dager from "../media/dager.jpg"
+import Programacion from "../media/image-4.png"
+import Gato from "../media/image-9.jpg"
+import Filosofia from "../media/image-5.jpg"
+import Pepino from "../media/Pepinos.png"
+import Juego from "../media/lumberjack.png"
 ---
 
 <section id="interests" class="py-24">
@@ -10,24 +17,59 @@ import Dropdown from "./Dropdown.astro"
     <h1 class="text-6xl text-center md:text-left font-bold mb-10 md:mb-20 text-text-100 sm:text-8xl text-primary">
         Mis intereses
     </h1>
-    <Dropdown title="Programación">
-        <p>asdf</p>
-    </Dropdown>
-    <Dropdown title="Música">
-        <p>asdf</p>
-    </Dropdown>
-    <Dropdown title="Filosofía">
-        <p>asdf</p>
-    </Dropdown>
-    <Dropdown title="Pepinos">
-        <p>asdf</p>
-    </Dropdown>
-    <Dropdown title="Música">
-        <p>asdf</p>
-    </Dropdown>
-    <Dropdown title="Juegos">
-        <p>asdf</p>
-    </Dropdown>
+    <div class="max-w-screen-lg mx-auto font-sans">
+
+        <Dropdown title="Programación">
+            <div class="mb-4">
+                <p class="font-light leading-relaxed mb-6">Soy programador fullstack, o como me dice mi vieja: "el que trabaja con computadoras". <br>
+                    Con varios años de experiencia, sé hacer de todo un poco: frontend, backend y apagar cosas para que anden de nuevo. <br> <br>
+                    Mi día a día es escribir líneas de código que funcionen… hasta que las toco de nuevo. </p>
+                <Image src={Programacion} alt="profile" width={600} height={600} class="mx-auto rounded-3xl" />
+            </div>
+        </Dropdown>
+        <Dropdown title="Música">
+            <div>
+                <p class="font-light leading-relaxed mb-6">
+                    La música es como el mate: una vez que te agarra, no te suelta. Entre acordes y riffs, 
+                    la guitarra es mi forma de terapia, y de paso, una excusa perfecta para no lavar los platos. <br><br>
+                    A continuación, un video mío tocando algo que parece música (si no te gusta, decile a mi gato, que siempre es mi crítico más duro).
+                </p>
+                <video src="/DagerGuitarra.mp4" controls class="mt-4 max-h-[500px] mx-auto rounded-xl">
+                    Tu navegador no soporta este video, pero podés imaginarme tocando algo espectacular.
+                </video>
+            </div>
+        </Dropdown>
+        <Dropdown title="Gatos">
+            <div>
+                <p class="font-light leading-relaxed mb-6">
+                    Mis gatos son los verdaderos dueños de la casa. Yo solo pago las cuentas y abro las latas. <br>
+        Su rutina incluye dormir 20 horas al día, mirarme con cara de "sos un inútil" y tirar cosas de la mesa porque, bueno, pueden. 
+                </p>
+                <Image src={Gato} alt="profile" width={600} height={600} class="mx-auto rounded-3xl" />
+            </div>
+        </Dropdown>
+        <Dropdown title="Filosofía">
+            <div>
+                <p class="font-light leading-relaxed mb-6">Me gusta filosofar sobre las contradicciones del mundo actual, porque, seamos sinceros, vivimos en una paradoja constante. <br> <br>
+                    Por un lado, te hablan de cuidar el planeta, pero te mandan el pedido envuelto en más plástico que un mueble nuevo. 
+                    Después está el tema del trabajo: ¿es ética la cultura del "trabajá como si tuvieras acciones de la empresa", 
+                    mientras te pagan como si vendieras limones en la ruta?.</p>
+                <Image src={Filosofia} alt="profile" width={600} height={600} class="mx-auto rounded-3xl" />
+            </div>
+        </Dropdown>
+        <Dropdown title="Pepinos">
+            <div>
+                <p class="font-light leading-relaxed mb-6">En mi rutina diaria nunca debe faltar comerse un buen pepino, de esos que tienen una forma y un sabor extraordinario. Comer pepinos me ha ayudado a superar mis metas y lograr la autorrealización.</p>
+                <Image src={Pepino} alt="profile" width={600} height={600} class="mx-auto rounded-3xl" />
+            </div>
+        </Dropdown>
+        <Dropdown title="Juegos">
+            <div>
+                <p class="font-light leading-relaxed mb-6">En mis tiempos libres, me gusta jugar y distraerme un rato. El juego que más me ha gustado ha sido el Lumberjack. Me desestresa talar árboles y apreciar al mismísimo Lumberjack.</p>
+                <Image src={Juego} alt="profile" width={600} height={600} class="mx-auto max-h-[600px] rounded-3xl" />
+            </div>
+        </Dropdown>
+    </div>
     
     </div>
 </section>

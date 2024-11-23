@@ -1,6 +1,8 @@
 @import url('nippo.css');
 @import url('nippo.css');
-
+html{
+  scroll-behavior: smooth;
+}
 #home {
   position: relative;
   background-image: url('/image-11.jpg'); /* Imagen de fondo */
